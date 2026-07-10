@@ -1,6 +1,6 @@
 # Colin's Code Metrics
 
-This repository tracks code metrics across selected CTS/TDF GitHub repositories.
+This repository tracks code metrics across my GitHub repositories.
 
 It collects two related kinds of metrics:
 
