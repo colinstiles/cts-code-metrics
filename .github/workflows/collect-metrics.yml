@@ -1,0 +1,93 @@
+name: Collect Code Metrics
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Runs every Monday at 6:00 AM UTC.
+    - cron: "0 6 * * 1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  collect-metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out metrics repo
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Install cloc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cloc
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Sync main, collect metrics, copy dashboard data, commit, and push
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_REPO_TOKEN }}
+        shell: bash
+        run: |
+          set -euxo pipefail
+
+          generate_metrics_commit() {
+            git fetch origin main
+            git checkout -B main origin/main
+
+            rm -rf .cache/repos
+
+            python scripts/collect_metrics.py \
+              --repo-list config/repos.txt \
+              --workspace .cache/repos \
+              --output data \
+              --author-email colin.stiles@tn.gov \
+              --author-email colintimothystiles@gmail.com \
+              --since 2026-01-01
+
+            mkdir -p docs/data
+            cp data/*.csv docs/data/
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+            git add data/*.csv docs/data/*.csv
+
+            if git diff --cached --quiet; then
+              echo "No metrics changes to commit"
+              return 1
+            fi
+
+            git commit -m "Update code metrics"
+            return 0
+          }
+
+          if ! generate_metrics_commit; then
+            exit 0
+          fi
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Push failed on attempt ${attempt}; regenerating from latest origin/main"
+            sleep 5
+
+            if ! generate_metrics_commit; then
+              exit 0
+            fi
+          done
+
+          git push origin HEAD:main

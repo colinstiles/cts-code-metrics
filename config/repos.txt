@@ -1,0 +1,6 @@
+# One owner/repo per line.
+# Blank lines and comments are ignored.
+
+colinstiles/.github
+colinstiles/cts-code-metrics
+colinstiles/cts-gis-portfolio
