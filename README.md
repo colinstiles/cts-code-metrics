@@ -1,6 +1,6 @@
 # Colin's Code Metrics
 
-This repository tracks code metrics across selected TDA/TDF GitHub repositories.
+This repository tracks code metrics across selected CTS/TDF GitHub repositories.
 
 It collects two related kinds of metrics:
 
@@ -28,7 +28,7 @@ When GitHub Pages is enabled from the `main` branch and `/docs` folder, the dash
 For this repository, the expected GitHub Pages URL is:
 
 ```text
-https://tn-dept-ag.github.io/tda-code-metrics/
+https://colinstiles.github.io/cts-code-metrics/
 ```
 
 The dashboard updates when the GitHub Actions workflow successfully regenerates the CSV outputs, copies them into `docs/data/`, and pushes the updated files to `main`.
@@ -36,7 +36,7 @@ The dashboard updates when the GitHub Actions workflow successfully regenerates 
 ## Repository Structure
 
 ```text
-tda-code-metrics/
+cts-code-metrics/
 ├─ .github/
 │  └─ workflows/
 │     └─ collect-metrics.yml
@@ -81,16 +81,9 @@ Example:
 
 ```text
 # One owner/repo per line.
-tn-dept-ag/tda-template
-tn-dept-ag/tdf-facilities
-tn-dept-ag/tda-code-metrics
-tn-dept-ag/tda-agol-content-management
-tn-dept-ag/tdf-agol-admin-insights
-tn-dept-ag/tda-agol-monitor-dependencies
-tn-dept-ag/tda-admin-management
-tn-dept-ag/tda-supervisor-management
-tn-dept-ag/tdf-agol-data-backups
-tn-dept-ag/.github
+colinstiles/.github
+colinstiles/cts-code-metrics
+colinstiles/cts-gis-portfolio
 ```
 
 When adding or removing repositories, also confirm that the GitHub token used by the workflow has access to the same repository list.
