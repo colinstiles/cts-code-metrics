@@ -81,9 +81,19 @@ Example:
 
 ```text
 # One owner/repo per line.
+
+# colinstiles repos
 colinstiles/.github
 colinstiles/cts-code-metrics
 colinstiles/cts-gis-portfolio
+
+# tin+topo repos
+tin-and-topo/.github
+tin-and-topo/tt-template
+tin-and-topo/tinadntopo.github.io
+tin-and-topo/tt-tennessee-public-areas
+tin-and-topo/tt-chattanooga-crime
+tin-and-topo/tt-tennessee-hunting
 ```
 
 When adding or removing repositories, also confirm that the GitHub token used by the workflow has access to the same repository list.
