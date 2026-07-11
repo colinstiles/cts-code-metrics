@@ -9,7 +9,7 @@ colinstiles/cts-gis-portfolio
 # tin+topo repos
 tin-and-topo/.github
 tin-and-topo/tt-template
-tin-and-topo/tinadntopo.github.io
+tin-and-topo/tinandtopo.github.io
 tin-and-topo/tt-tennessee-public-areas
 tin-and-topo/tt-chattanooga-crime
 tin-and-topo/tt-tennessee-hunting
