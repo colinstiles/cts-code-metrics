@@ -161,3 +161,12 @@ run_date,run_timestamp_utc,since,author_filter,repo,current_files,current_code_l
 2026-10-26,2026-10-26T11:50:15Z,2026-01-01,ALL,tin-and-topo/tt-tennessee-public-areas,9,366,14,1117,444,673
 2026-10-26,2026-10-26T11:50:15Z,2026-01-01,ALL,tin-and-topo/tt-chattanooga-crime,22,5211,18,8619,1790,6829
 2026-10-26,2026-10-26T11:50:15Z,2026-01-01,ALL,tin-and-topo/tt-tennessee-hunting,0,0,0,0,0,0
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,colinstiles/.github,14,413,18,704,134,570
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,colinstiles/cts-code-metrics,4,1135,31,4739,2605,2134
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,colinstiles/cts-gis-portfolio,57,17345,85,44327,29673,14654
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,tin-and-topo/.github,14,395,13,724,47,677
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,tin-and-topo/tt-template,9,281,15,848,291,557
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,tin-and-topo/tinandtopo.github.io,481,127599,2,142923,113,142810
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,tin-and-topo/tt-tennessee-public-areas,9,366,14,1117,444,673
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,tin-and-topo/tt-chattanooga-crime,22,5211,18,8619,1790,6829
+2026-11-02,2026-11-02T14:07:43Z,2026-01-01,ALL,tin-and-topo/tt-tennessee-hunting,0,0,0,0,0,0
